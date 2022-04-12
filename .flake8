@@ -1,0 +1,4 @@
+[flake8]
+ignore = F841
+exclude = modules/poll_until.py
+max-line-length=120

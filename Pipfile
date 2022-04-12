@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+behave = "*"
+selenium = "*"
+requests = "*"
+pylint = "*"
+ipdb = "*"
+radon = "*"
+clipboard = "*"
+
+[dev-packages]
+ipdb = "*"
+pylint = "*"
+flake8 = "*"
+flake8-import-order = "*"
+radon = "*"
+tox = "*"
+autopep8 = "*"
+
+[requires]
+python_version = "3.7"

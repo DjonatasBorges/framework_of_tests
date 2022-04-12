@@ -1,0 +1,11 @@
+repos:
+  - repo: local
+    hooks:
+      - id: flake8
+        name: flake8
+        args: [--max-line-length=120]
+        stages: [commit]
+        language: system
+        entry: pipenv run flake8
+        types: [python]
+        exclude: ./modules/poll_until.py
