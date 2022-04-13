@@ -1,26 +1,31 @@
-<testsuite name="checkbox.Filtros de atividades" tests="1" errors="1" failures="0" skipped="0" time="0.001109" timestamp="2022-04-11T21:22:49.287724" hostname="djonatasborges-Nitro-AN515-52"><testcase classname="checkbox.Filtros de atividades" name="" status="failed" time="0.001109"><error type="NotImplementedError" message="STEP: Given estar na &quot;home page&quot; do site">
+<testsuite name="checkbox.Filtros de atividades" tests="1" errors="1" failures="0" skipped="0" time="1.524389" timestamp="2022-04-12T21:51:47.942182" hostname="djonatasborges-Nitro-AN515-52"><testcase classname="checkbox.Filtros de atividades" name="" status="failed" time="1.524389"><error type="TypeError" message="unhashable type: 'dict'">
 <![CDATA[
-Failing step: Dado estar na "home page" do site ... failed in 0.001s
-Location: features/checkbox.feature:4
+Failing step: Entao os seguintes filmes estarão marcados ... failed in 0.002s
+  | Filme um                             | Filme dois |
+  | Capitão América: O Primeiro Vingador | Thor       |
+Location: features/checkbox.feature:10
 Traceback (most recent call last):
   File "/home/djonatas-borges/Documentos/framework_of_tests/.venv/lib/python3.10/site-packages/behave/model.py", line 1329, in run
     match.run(runner.context)
   File "/home/djonatas-borges/Documentos/framework_of_tests/.venv/lib/python3.10/site-packages/behave/matchers.py", line 98, in run
     self.func(context, *args, **kwargs)
-  File "features/steps/steps.py", line 5, in step_impl
-    raise NotImplementedError(u'STEP: Given estar na "home page" do site')
-NotImplementedError: STEP: Given estar na "home page" do site
+  File "features/steps/checkbox.py", line 18, in step_impl
+    found = context.page_object.confirm_movies(table_list)
+  File "/home/djonatas-borges/Documentos/framework_of_tests/framework_of_tests/pages/checkbox.py", line 41, in confirm_movies
+    locator = self.checkbox[movie]
+TypeError: unhashable type: 'dict'
 ]]>
 </error><system-out>
 <![CDATA[
 @scenario.begin
   Cenario: 
-    Dado estar na "home page" do site ... failed in 0.001s
-    Quando clicar no link de paginas "Checkboxes" ... skipped in 0.000s
-    Entao devo ser redirecionado para a tela "Checkbox" ... skipped in 0.000s
-    Quando marcar o checkbox "Capitão América: O Primeiro Vingador" ... skipped in 0.000s
-    E marcar o checkbox "Thor" ... skipped in 0.000s
-    Entao os seguintes filmes estarão marcados ... skipped in 0.000s
+    Dado acesso a aplicação ... passed in 0.001s
+    Quando clicar no link de paginas "Checkboxes" ... passed in 0.514s
+    Entao devo ser redirecionado para a tela "Checkboxes" ... passed in 0.023s
+    Quando marcar o(s) checkbox(es) "Capitão América: O Primeiro Vingador, Thor" ... passed in 0.985s
+    Entao os seguintes filmes estarão marcados ... failed in 0.002s
+      | Filme um                             | Filme dois |
+      | Capitão América: O Primeiro Vingador | Thor       |
 
 @scenario.end
 --------------------------------------------------------------------------------

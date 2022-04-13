@@ -2,20 +2,23 @@ Funcionalidade: Filtros de atividades # features/checkbox.feature:1
 
   Contexto:   # features/checkbox.feature:3
 
-  Cenario:                                                          # features/checkbox.feature:8
-    Dado estar na "home page" do site                               # features/steps/steps.py:3
+  Cenario:                                                                       # features/checkbox.feature:8
+    Dado acesso a aplicação                                                      # features/steps/steps.py:9
+    Quando clicar no link de paginas "Checkboxes"                                # features/steps/steps.py:13
+    Entao devo ser redirecionado para a tela "Checkboxes"                        # features/steps/steps.py:18
+    Quando marcar o(s) checkbox(es) "Capitão América: O Primeiro Vingador, Thor" # features/steps/checkbox.py:5
+    Entao os seguintes filmes estarão marcados                                   # features/steps/checkbox.py:11
+      | Filme um                             | Filme dois |
+      | Capitão América: O Primeiro Vingador | Thor       |
       Traceback (most recent call last):
         File "/home/djonatas-borges/Documentos/framework_of_tests/.venv/lib/python3.10/site-packages/behave/model.py", line 1329, in run
           match.run(runner.context)
         File "/home/djonatas-borges/Documentos/framework_of_tests/.venv/lib/python3.10/site-packages/behave/matchers.py", line 98, in run
           self.func(context, *args, **kwargs)
-        File "features/steps/steps.py", line 5, in step_impl
-          raise NotImplementedError(u'STEP: Given estar na "home page" do site')
-      NotImplementedError: STEP: Given estar na "home page" do site
+        File "features/steps/checkbox.py", line 18, in step_impl
+          found = context.page_object.confirm_movies(table_list)
+        File "/home/djonatas-borges/Documentos/framework_of_tests/framework_of_tests/pages/checkbox.py", line 41, in confirm_movies
+          locator = self.checkbox[movie]
+      TypeError: unhashable type: 'dict'
 
-    Quando clicar no link de paginas "Checkboxes"                   # None
-    Entao devo ser redirecionado para a tela "Checkbox"             # None
-    Quando marcar o checkbox "Capitão América: O Primeiro Vingador" # None
-    E marcar o checkbox "Thor"                                      # None
-    Entao os seguintes filmes estarão marcados                      # None
 
