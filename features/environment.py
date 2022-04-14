@@ -8,6 +8,9 @@ def before_all(context):
     context.driver = setup_driver(browser, page)
     context.driver.maximize_window()
 
+def before_scenario(context, scenario):
+    if 'wip' in scenario.tags:
+        scenario.skip('work in progress')
 
 def after_step(context, step):
     debug = context.config.userdata['debug'].lower()
