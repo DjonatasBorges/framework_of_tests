@@ -2,6 +2,7 @@ from lib2to3.pytree import Base
 from behave import given, then, when
 
 from modules.constants import PAGE_OBJECTS
+from modules.commons import check_url_suffix
 
 from pages.base import BasePage
 
@@ -17,6 +18,5 @@ def step_impl(context, page):
 
 @then(u'devo ser redirecionado para a tela "{page}"')
 def step_impl(context, page):
-    found = context.page_object.actual_page_title
-    assert page in found
+    check_url_suffix(context.driver, page)
     context.page_object = PAGE_OBJECTS[page](context.driver)

@@ -118,11 +118,11 @@ class BasePage(ABC):
 
     def click_button(self, button):
         try:
-            self._wait_to_be_clickable(By.CSS_SELECTOR, self.buttons[button])
-            self.browser.click(self._query_selector(self.buttons[button]))
+            self._wait_to_be_clickable(By.CSS_SELECTOR, self._buttons[button])
+            self._query_selector(self._buttons[button]).click()
         except InvalidSelectorException:
-            self._wait_to_be_clickable(By.XPATH, self.buttons[button])
-            self.browser.click(self.driver.find_element(By.XPATH, self.buttons[button]))
+            self._wait_to_be_clickable(By.XPATH, self._buttons[button])
+            self.driver.find_element(By.XPATH, self.buttons[button]).click()
         except Exception as e:
             raise e
 

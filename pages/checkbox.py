@@ -1,13 +1,5 @@
-from time import sleep
-
 from pages.base import BasePage
-
-
-from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.expected_conditions import element_selection_state_to_be
 
 
 class Checkbox(BasePage):
@@ -35,10 +27,16 @@ class Checkbox(BasePage):
             if not self.driver.find_element(By.CSS_SELECTOR, locator).is_selected():
                 self._query_selector(locator).click()
 
-    def confirm_movies(self, movies):
-        strings = ''
-        for movie in movies:
-            locator = self.checkbox[movie]
-            if self.driver.find_element(By.CSS_SELECTOR, locator).is_selected():
-                strings.join(f'{self.driver.find_element(By.CSS_SELECTOR, locator)}, ')
-        return strings
+    def confirm_movies(self, list_dict):
+        lista = []
+        dictionary = {}
+        quantidades_filmes = 1
+        for list in list_dict:
+            values = list.values()
+            for value in values:
+                number_filme = f'Filme {quantidades_filmes}'
+                for movie in self.checkbox.keys():
+                    if movie in value:
+                        dictionary.update({number_filme: movie})
+                quantidades_filmes += 1        
+        return lista

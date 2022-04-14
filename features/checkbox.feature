@@ -1,4 +1,4 @@
-Funcionalidade: Filtros de atividades
+Funcionalidade: Checkboxes
 
   Contexto:
     Dado acesso a aplicação
@@ -8,5 +8,5 @@ Funcionalidade: Filtros de atividades
   Cenario:
     Quando marcar o(s) checkbox(es) "Capitão América: O Primeiro Vingador, Thor"
     Entao os seguintes filmes estarão marcados
-      | Filme um                            | Filme dois|
+      | Filme 1                             | Filme 2   |
       | Capitão América: O Primeiro Vingador| Thor      |

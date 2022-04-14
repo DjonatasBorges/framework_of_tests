@@ -10,10 +10,8 @@ def select_movies(context, lista):
 
 @then(u'os seguintes filmes estarão marcados')
 def step_impl(context):
-    table_dict = parse_context_table(context.table.headings, context.table.rows)
-    table_list = []
-    expected = ''
-    for row in table_dict:
-        table_list.append(row)
-    found = context.page_object.confirm_movies(table_list)
-    assert expected in found, f'expected: {expected}, found: {found}'
+    expected_list = parse_context_table(context.table.headings, context.table.rows)
+    found_list = context.page_object.confirm_movies(expected_list)
+    for expected in expected_list:
+        for found in found_list:
+            assert expected in found, f'expected: {expected}, found: {found}'

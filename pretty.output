@@ -1,24 +1,20 @@
-Funcionalidade: Filtros de atividades # features/checkbox.feature:1
+Funcionalidade: Checkboxes # features/login.feature:1
 
-  Contexto:   # features/checkbox.feature:3
+  Contexto:   # features/login.feature:3
 
-  Cenario:                                                                       # features/checkbox.feature:8
-    Dado acesso a aplicação                                                      # features/steps/steps.py:9
-    Quando clicar no link de paginas "Checkboxes"                                # features/steps/steps.py:13
-    Entao devo ser redirecionado para a tela "Checkboxes"                        # features/steps/steps.py:18
-    Quando marcar o(s) checkbox(es) "Capitão América: O Primeiro Vingador, Thor" # features/steps/checkbox.py:5
-    Entao os seguintes filmes estarão marcados                                   # features/steps/checkbox.py:11
-      | Filme um                             | Filme dois |
-      | Capitão América: O Primeiro Vingador | Thor       |
-      Traceback (most recent call last):
-        File "/home/djonatas-borges/Documentos/framework_of_tests/.venv/lib/python3.10/site-packages/behave/model.py", line 1329, in run
-          match.run(runner.context)
-        File "/home/djonatas-borges/Documentos/framework_of_tests/.venv/lib/python3.10/site-packages/behave/matchers.py", line 98, in run
-          self.func(context, *args, **kwargs)
-        File "features/steps/checkbox.py", line 18, in step_impl
-          found = context.page_object.confirm_movies(table_list)
-        File "/home/djonatas-borges/Documentos/framework_of_tests/framework_of_tests/pages/checkbox.py", line 41, in confirm_movies
-          locator = self.checkbox[movie]
-      TypeError: unhashable type: 'dict'
+  Cenario: Login com conta válida                             # features/login.feature:8
+    Dado acesso a aplicação                                   # features/steps/steps.py:10
+    Quando clicar no link de paginas "Login"                  # features/steps/steps.py:14
+    Entao devo ser redirecionado para a tela "Login"          # features/steps/steps.py:19
+    Quando efetuar o login com "Usuário Correto"              # features/steps/login.py:5
+    Entao logim deve ser efetuado com sucesso                 # features/steps/login.py:10
+    Quando efetuar o logout                                   # features/steps/login.py:19
+    Entao devo receber a mensagem "Você saiu da área logada!" # features/steps/login.py:24
 
+  Cenario: Login com conta inválida                  # features/login.feature:14
+    Dado acesso a aplicação                          # features/steps/steps.py:10
+    Quando clicar no link de paginas "Login"         # features/steps/steps.py:14
+    Entao devo ser redirecionado para a tela "Login" # features/steps/steps.py:19
+    Quando efetuar o login com "Usuário Incorreto"   # features/steps/login.py:5
+    Entao logim não deve ser efetuado                # features/steps/login.py:15
 
