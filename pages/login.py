@@ -41,8 +41,8 @@ class Login(BasePage):
 
     def confirm_logout(self):
         self._wait_to_exist(By.CSS_SELECTOR, self._msg_login)
-        mensagem = self.msg_login.text
-        return mensagem
+        message = self.msg_login.text
+        return message
 
     def logout(self):
         self.click_button('Logout')

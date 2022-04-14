@@ -30,13 +30,13 @@ class Checkbox(BasePage):
     def confirm_movies(self, list_dict):
         lista = []
         dictionary = {}
-        quantidades_filmes = 1
+        qtd_movies = 1
         for list in list_dict:
             values = list.values()
             for value in values:
-                number_filme = f'Filme {quantidades_filmes}'
+                number_filme = f'Filme {qtd_movies}'
                 for movie in self.checkbox.keys():
                     if movie in value:
                         dictionary.update({number_filme: movie})
-                quantidades_filmes += 1
+                qtd_movies += 1
         return lista
