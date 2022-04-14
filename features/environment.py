@@ -8,6 +8,7 @@ def before_all(context):
     context.driver = setup_driver(browser, page)
     context.driver.maximize_window()
 
+
 def after_step(context, step):
     debug = context.config.userdata['debug'].lower()
 
@@ -25,6 +26,6 @@ def after_scenario(context, scenario):
     if not scenario.status.name == 'skipped':
         context.driver.get(context.config.userdata['page'])
 
+
 def after_all(context):
     context.driver.close()
-

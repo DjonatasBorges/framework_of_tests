@@ -11,7 +11,7 @@ class DragAndDrop(BasePage):
         self._spider_man = 'img[alt="Homem Aranha"]'
 
         self._locators_team = {
-            "Time do Stark": self._team_stark ,
+            "Time do Stark": self._team_stark,
             "Time do Capitão América": self._team_cap
         }
 
@@ -30,5 +30,3 @@ class DragAndDrop(BasePage):
         if confirm_return:
             return True
         return False
-        
-

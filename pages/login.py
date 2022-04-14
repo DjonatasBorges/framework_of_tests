@@ -1,8 +1,5 @@
-from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from pages.base import BasePage
-from time import sleep
 
 
 class Login(BasePage):
@@ -29,8 +26,7 @@ class Login(BasePage):
     def msg_login(self):
         return self._query_selector(self._msg_login)
 
-
-    def login(self, user, password):     
+    def login(self, user, password):
         self._wait_to_exist(By.CSS_SELECTOR, self._user)
         self.user.send_keys(user)
         self.password.send_keys(password)

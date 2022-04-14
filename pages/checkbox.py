@@ -8,12 +8,12 @@ class Checkbox(BasePage):
 
         self.checkbox = {
             'Capitão América: O Primeiro Vingador': 'input[value="cap"]',
-            'Homem de Ferro': 'input[value="iron-man"]', 
-            'Thor': '#thor', 
-            'Os Vingadores': 'input[value="the-avengers"]', 
-            'Guardiões da Galáxia': 'input[value="guardians"]', 
-            'Homem-Formiga': 'input[value="ant-man"]', 
-            'Pantera Negra': 'input[value="black-panther"]', 
+            'Homem de Ferro': 'input[value="iron-man"]',
+            'Thor': '#thor',
+            'Os Vingadores': 'input[value="the-avengers"]',
+            'Guardiões da Galáxia': 'input[value="guardians"]',
+            'Homem-Formiga': 'input[value="ant-man"]',
+            'Pantera Negra': 'input[value="black-panther"]',
         }
 
     def deselect_all_checkboxes(self):
@@ -38,5 +38,5 @@ class Checkbox(BasePage):
                 for movie in self.checkbox.keys():
                     if movie in value:
                         dictionary.update({number_filme: movie})
-                quantidades_filmes += 1        
+                quantidades_filmes += 1
         return lista

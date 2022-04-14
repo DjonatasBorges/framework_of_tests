@@ -2,7 +2,7 @@ from abc import ABC
 from time import sleep
 
 from selenium.common.exceptions import InvalidSelectorException, NoSuchElementException
-from selenium.common.exceptions import TimeoutException
+
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
@@ -33,7 +33,7 @@ class BasePage(ABC):
             'Upload de arquivos': 'a[href="/upload"]',
             'Login': 'a[href="/login"]',
             'Login com campo randômico': 'a[href="/login2"]',
-            'Login com cadastro' :'a[href="/access"]',
+            'Login com cadastro': 'a[href="/access"]',
             'Iframe bom': 'a[href="/nice_iframe"]',
             'Iframe ruim': 'a[href="/bad_iframe"]',
             'Hover': 'a[href="/hovers"]',
