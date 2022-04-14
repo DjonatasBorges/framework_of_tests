@@ -1,3 +1,4 @@
+from ast import literal_eval
 from behave import then, when
 
 from modules.commons import parse_context_table
@@ -12,8 +13,6 @@ def select_movies(context, lista):
 
 @then(u'os seguintes filmes estarão marcados')
 def confirm_selected_movies(context):
-    expected_list = parse_context_table(context.table.headings, context.table.rows)
-    found_list = context.page_object.confirm_movies(expected_list)
-    for expected in expected_list:
-        for found in found_list:
-            assert expected in found, f'expected: {expected}, found: {found}'
+    expected = parse_context_table(context.table.headings, context.table.rows)
+    found = context.page_object.confirm_movies(expected)
+    assert expected == found, f'expected: {expected}, found: {found}'

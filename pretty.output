@@ -6,73 +6,8 @@ Funcionalidade: Checkboxes # features/checkbox.feature:1
     Dado acesso a aplicação                                                      # features/steps/steps.py:9
     Quando clicar no link de paginas "Checkboxes"                                # features/steps/steps.py:14
     Entao devo ser redirecionado para a tela "Checkboxes"                        # features/steps/steps.py:20
-    Quando marcar o(s) checkbox(es) "Capitão América: O Primeiro Vingador, Thor" # features/steps/checkbox.py:6
-    Entao os seguintes filmes estarão marcados                                   # features/steps/checkbox.py:13
+    Quando marcar o(s) checkbox(es) "Capitão América: O Primeiro Vingador, Thor" # features/steps/checkbox.py:7
+    Entao os seguintes filmes estarão marcados                                   # features/steps/checkbox.py:14
       | Filme 1                              | Filme 2 |
       | Capitão América: O Primeiro Vingador | Thor    |
-
-Funcionalidade: Checkboxes # features/drag_and_drop.feature:1
-
-  Contexto:   # features/drag_and_drop.feature:3
-
-  @wip
-  Cenario: Homem-Aranha no time do Capitão América.                 # features/drag_and_drop.feature:9
-    Dado acesso a aplicação                                         # None
-    Quando clicar no link de paginas "Drag and Drop"                # None
-    Entao devo ser redirecionado para a tela "Drag and Drop"        # None
-    Quando posicionar o "Homem-Aranha" no "Time do Capitão América" # None
-    Entao "Homem-Aranha" estará no "Time do Capitão América"        # None
-
-  @wip
-  Cenario: Homem-Aranha no time do Stark.                    # features/drag_and_drop.feature:14
-    Dado acesso a aplicação                                  # None
-    Quando clicar no link de paginas "Drag and Drop"         # None
-    Entao devo ser redirecionado para a tela "Drag and Drop" # None
-    Quando posicionar o "Homem-Aranha" no "Time do Stark"    # None
-    Entao "Homem-Aranha" estará no "Time do Stark"           # None
-
-Funcionalidade: Dropdown # features/drop_down.feature:1
-
-  Contexto:   # features/drop_down.feature:3
-
-  Cenario: Selecionar Tony Stark                        # features/drop_down.feature:8
-    Dado acesso a aplicação                             # features/steps/steps.py:9
-    Quando clicar no link de paginas "Dropdown"         # features/steps/steps.py:14
-    Entao devo ser redirecionado para a tela "Dropdown" # features/steps/steps.py:20
-    Quando selecionar "Tony Stark" no Dropdown          # features/steps/drop_down.py:4
-    Entao "Tony Stark" deve esta como opção default     # features/steps/drop_down.py:9
-
-  Cenario: Selecionar Steve Rogers                      # features/drop_down.feature:12
-    Dado acesso a aplicação                             # features/steps/steps.py:9
-    Quando clicar no link de paginas "Dropdown"         # features/steps/steps.py:14
-    Entao devo ser redirecionado para a tela "Dropdown" # features/steps/steps.py:20
-    Quando selecionar "Steve Rogers" no Dropdown        # features/steps/drop_down.py:4
-    Entao "Steve Rogers" deve esta como opção default   # features/steps/drop_down.py:9
-
-  Cenario: Selecionar Loki                              # features/drop_down.feature:16
-    Dado acesso a aplicação                             # features/steps/steps.py:9
-    Quando clicar no link de paginas "Dropdown"         # features/steps/steps.py:14
-    Entao devo ser redirecionado para a tela "Dropdown" # features/steps/steps.py:20
-    Quando selecionar "Loki" no Dropdown                # features/steps/drop_down.py:4
-    Entao "Loki" deve esta como opção default           # features/steps/drop_down.py:9
-
-Funcionalidade: Checkboxes # features/login.feature:1
-
-  Contexto:   # features/login.feature:3
-
-  Cenario: Login com conta válida                             # features/login.feature:8
-    Dado acesso a aplicação                                   # features/steps/steps.py:9
-    Quando clicar no link de paginas "Login"                  # features/steps/steps.py:14
-    Entao devo ser redirecionado para a tela "Login"          # features/steps/steps.py:20
-    Quando efetuar o login com "Usuário Correto"              # features/steps/login.py:6
-    Entao logim deve ser efetuado com sucesso                 # features/steps/login.py:11
-    Quando efetuar o logout                                   # features/steps/login.py:21
-    Entao devo receber a mensagem "Você saiu da área logada!" # features/steps/login.py:26
-
-  Cenario: Login com conta inválida                  # features/login.feature:14
-    Dado acesso a aplicação                          # features/steps/steps.py:9
-    Quando clicar no link de paginas "Login"         # features/steps/steps.py:14
-    Entao devo ser redirecionado para a tela "Login" # features/steps/steps.py:20
-    Quando efetuar o login com "Usuário Incorreto"   # features/steps/login.py:6
-    Entao logim não deve ser efetuado                # features/steps/login.py:16
 

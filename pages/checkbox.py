@@ -31,12 +31,13 @@ class Checkbox(BasePage):
         lista = []
         dictionary = {}
         qtd_movies = 1
-        for list in list_dict:
-            values = list.values()
-            for value in values:
-                number_filme = f'Filme {qtd_movies}'
-                for movie in self.checkbox.keys():
-                    if movie in value:
-                        dictionary.update({number_filme: movie})
-                qtd_movies += 1
+        for _list in list_dict:
+            for _dict in _list.values():
+                if _dict in self.checkbox:
+                    locator = self.checkbox[_dict]
+                    if self.driver.find_element(By.CSS_SELECTOR, locator).is_selected():
+                        number_movie = f'Filme {qtd_movies}'
+                        dictionary.update({number_movie: _dict})
+                        qtd_movies += 1
+            lista.append(dictionary)
         return lista
