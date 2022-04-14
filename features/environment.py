@@ -1,4 +1,6 @@
 from modules.browser import setup_driver
+from modules.utils import patch_scenario_with_autoretry
+
 import os
 
 
@@ -32,3 +34,10 @@ def after_scenario(context, scenario):
 
 def after_all(context):
     context.driver.close()
+
+
+def before_feature(context, feature):
+    if context.config.userdata.get('retry', 'false') == 'true':
+        max_attempts = int(context.config.userdata.get('max_retry_attempts', '3'))
+        for scenario in feature.walk_scenarios():
+            patch_scenario_with_autoretry(scenario, max_attempts=max_attempts)
