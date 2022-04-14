@@ -48,12 +48,12 @@ def check_url_suffix(driver: WebDriver, page_name: str) -> None:
 
      Args:
          driver:
-             O webdriver de selênio remoto atual.
+             O webdriver de selenium atual.
          page_name:
              String com o texto relativo ao nome da página
              (chave na constante URL_SUFFIXES).
     """
-    for i in range(5):
+    for _ in range(5):
         try:
             suffix = driver.current_url.split('/')[-1]
             assert suffix.startswith(URL_SUFFIXES[page_name])
