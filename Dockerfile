@@ -26,8 +26,9 @@ RUN unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
 # Set display port as an environment variable
 ENV DISPLAY=:99
 
-COPY . /app
-WORKDIR /app
+COPY . /framework_of_tests
+
+WORKDIR /framework_of_tests
 
 RUN pip install --upgrade pip
 
